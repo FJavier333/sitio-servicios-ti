@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables globales */
+:root {
+  --color-brand: #2563eb;   /* Azul principal */
+  --color-accent: #9333ea;  /* Morado/acento */
+  --color-bg: #f9fafb;      /* Fondo gris claro */
+  --color-text: #111827;    /* Texto gris oscuro */
+}
+
+/* Tipografía base */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Ejemplo de clases reutilizables */
+.btn-primary {
+  @apply bg-[var(--color-brand)] text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition;
+}
+
+.btn-accent {
+  @apply bg-[var(--color-accent)] text-white font-semibold px-4 py-2 rounded-lg hover:bg-purple-700 transition;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}

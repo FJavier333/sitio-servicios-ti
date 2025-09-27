@@ -1,0 +1,19 @@
+# dependencias
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+
+# build
+dist/
+.vite/
+
+# env/secretos
+.env
+.env.*
+!.env.example
+
+# editor/so
+.DS_Store
+*.log
+.vscode/
+.idea/
