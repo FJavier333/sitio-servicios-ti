@@ -7,7 +7,7 @@
   --color-brand: #2563eb;   /* Azul principal */
   --color-accent: #9333ea;  /* Morado/acento */
   --color-bg: #f9fafb;      /* Fondo gris claro */
-  --color-text: #111827;    /* Texto gris oscuro */
+  --color-text: #000000;    /* Texto gris oscuro */
 }
 
 /* Tipografía base */
@@ -31,3 +31,3092 @@ body {
 .container {
   @apply max-w-7xl mx-auto px-4;
 }
+
+/*--------------------------------------------------------------------------------------------Tipografia---------------------------------------------------------------------------------------*/
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+}
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+/*--------------------------------------------------------------------------------------------Tipografia---------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------Navbarrr---------------------------------------------------------------------------------------*/
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;       /* 🔹 evita el salto */
+  flex-grow: 1;            /* 🔹 permite más espacio */
+  justify-content: flex-end; /* 🔹 los alinea correctamente */
+}
+
+/* Reduce espacios en nav para pantallas medianas/pequeñas */
+@media (max-width: 1200px) {
+  .nav-links { gap: 1rem; }
+  .nav-controls { gap: 0.75rem; }
+}
+
+/* Cambia el texto largo por corto en móviles (opcional si tienes utilidades) */
+@media (max-width: 992px) {
+  .nav-cta { font-size: 0.9rem; }
+}
+
+@media (max-width: 1200px) {
+  .nav-cta { font-size: 0.95rem; }
+  .nav-links { gap: 1rem; }
+  .nav-controls { gap: 0.75rem; }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #fafcff, #ffffff, #ffffff); /* degradado dinámico */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem; /* separación más elegante */
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #f1f5f9; /* gris muy claro */
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #38bdf8; /* azul celeste al hover */
+}
+
+/* Línea degradada animada al estar activo */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #3b82f6); /* azul -> celeste -> azul */
+  animation: gradient-move 3s linear infinite;
+}
+
+/* Animación sutil del degradado */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*flegioeurivhnggggggggg/
+/* Contenedor interno: logo izq / links der */
+.nav-inner {
+  max-width: 1152px; /* igual que tu max-w-6xl */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 2rem;  /* 🔹 Agregamos padding horizontal */
+}
+
+/* Marca */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.brand-logo {
+  height: 28px;                 /* ajusta a tu logo */
+  width: auto;
+  display: block;
+}
+.brand-name {
+  color: #e2e8f0;               /* o #0f172a si tu navbar es clara */
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+
+}
+
+/* Links a la derecha (ya tienes .nav-container y .nav-link) */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;                     /* espacio entre links */
+}
+
+/* Botón CTA rojo (como el ejemplo) */
+.nav-cta {
+  margin-left: .5rem;
+  padding: .55rem 1rem;
+  border-radius: .6rem;
+  background: #ef4444;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+}
+.nav-cta:hover { background: #dc2626; box-shadow: 0 6px 16px rgba(239,68,68,.25); }
+.nav-cta:active { transform: translateY(1px); }
+
+/* Responsive sencillo */
+@media (max-width: 640px) {
+  .nav-inner { padding: 0 .5rem; }
+  .nav-container { gap: 1rem; }
+  .brand-name { display: none; } /* deja solo el isologo en móvil (opcional) */
+}
+
+/*logo*/
+
+.brand-logo {
+  height: 36px;     /* ajusta según el tamaño real del logo */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+/*logo*/
+
+.nav-link {
+  color: #000000; /* gris oscuro elegante */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #000000; /* aún más oscuro en hover */
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3b82f6; /* azul pro para indicar activo */
+  border-radius: 2px;
+}
+/*--------------------------------------------------------------------------------------------Navbarrr---------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------Formulario-------------------------------------------------------------------------------------*/
+/* ===== FORMULARIO DE CONTACTO ===== */
+.card-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-contacto .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000; /* slate-900 */
+  margin-bottom: 0.25rem;
+}
+
+.card-contacto .card-subtitle {
+  font-size: 0.875rem;
+  color: #64748b; /* slate-500 */
+  margin-bottom: 1rem;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-contacto .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-contacto label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1e293b; /* slate-800 */
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #cbd5e1; /* slate-300 */
+  font-size: 0.95rem;
+  background-color: #f8fafc; /* slate-50 */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  border-color: #2563eb; /* blue-600 */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.form-contacto .btn-primary {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.form-contacto .btn-primary:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+.form-contacto .btn-primary:active {
+  transform: scale(0.97);
+}
+
+.alert {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.alert.info {
+  background-color: #e0f2fe; /* sky-100 */
+  color: #0369a1; /* sky-800 */
+}
+
+/* ===== FORMULARIO DE CONTACTO (versión mejorada) ===== */
+.card-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-contacto .card-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.card-contacto .card-subtitle {
+  font-size: 0.95rem;
+  color: #475569; /* slate-600 */
+  margin-bottom: 1rem;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Labels */
+.form-contacto label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000104; /* slate-900 */
+}
+
+/* Inputs y textarea */
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  font-size: 0.95rem;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #3b82f6, #9333ea) border-box;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.form-contacto input:hover,
+.form-contacto textarea:hover {
+  transform: scale(1.01);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.15);
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+}
+
+/* Botón */
+.form-contacto .btn-primary {
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #2563eb);
+  background-size: 200% auto;
+  color: white;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-position 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.form-contacto .btn-primary:hover {
+  background-position: right center;
+  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+.form-contacto .btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Mensajes */
+.alert {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+}
+
+.alert.info {
+  background: linear-gradient(90deg, #e0f2fe, #f0f9ff);
+  color: #075985;
+  border: 1px solid #bae6fd;
+}
+
+/* ===== FORMULARIO DE CONTACTO (estilo sutil y profesional) ===== */
+.card-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-contacto .card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.card-contacto .card-subtitle {
+  font-size: 0.9rem;
+  color: #475569; /* slate-600 */
+  margin-bottom: 1rem;
+}
+
+/* Contenedor del formulario con borde degradado sutil */
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #2563eb, #60a5fa) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Labels */
+.form-contacto label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000000; /* slate-900 */
+}
+
+/* Inputs y textarea */
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #cbd5e1; /* slate-300 */
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Botón */
+.form-contacto .btn-primary {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-contacto .btn-primary:hover {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+}
+
+.form-contacto .btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Mensajes */
+.alert {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.alert.info {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+/*--------------------------------------------------------------------------------------------Formulario-------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------Marcas---------------------------------------------------------------------------------------*/
+/* ===== PARTNERS ===== */
+
+/* Hover en desktop */
+.partners-logo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partners-logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+
+/* Slider en mobile */
+.partners-slider {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 25s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*--------------------------------------------------------------------------------------------Marcas---------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------Mode switch---------------------------------------------------------------------------------------*/
+/* ===== MODE SWITCH (General / Administrador) ===== */
+.mode-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+}
+
+.mode-label {
+  font-size: 0.9rem;
+  color: #94a3b8; /* slate-400 */
+  font-weight: 600;
+  letter-spacing: .2px;
+  transition: color .25s ease;
+}
+
+.mode-label.active {
+  color: #000000; /* slate-900 */
+}
+
+/* Contenedor del switch */
+.switch {
+  position: relative;
+  width: 64px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: #eef2f7; /* base */
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow .25s ease, background .25s ease, border-color .25s ease;
+  box-shadow:
+    inset 6px 6px 12px rgba(0,0,0,0.08),
+    inset -6px -6px 12px rgba(255,255,255,0.8),
+    0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* fondo interno con “sombra” del lado opuesto (efecto perilla) */
+.switch .switch-bg {
+  position: absolute;
+  inset: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dfe6ee, #eef2f7);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.switch.off .switch-bg {
+  background: linear-gradient(90deg, #e5e9f1, #cfd7e3);
+}
+
+.switch.on .switch-bg {
+  background: linear-gradient(90deg, #49d17d, #34c759); /* verde iOS */
+}
+
+/* perilla “vidrio” */
+.switch .switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,0.95), rgba(255,255,255,0.7)),
+    linear-gradient(145deg, rgba(255,255,255,0.9), rgba(240,244,248,0.9));
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.15),
+    inset 0 1px 2px rgba(255,255,255,0.6),
+    inset -2px -2px 6px rgba(0,0,0,0.06);
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+  will-change: transform;
+}
+
+.switch.on .switch-thumb {
+  transform: translateX(30px);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.18),
+    inset 0 1px 2px rgba(255,255,255,0.7),
+    inset -2px -2px 6px rgba(0,0,0,0.08);
+}
+
+/* motion-reduce accesible */
+@media (prefers-reduced-motion: reduce) {
+  .switch,
+  .switch .switch-bg,
+  .switch .switch-thumb {
+    transition: none;
+  }
+}
+/*--------------------------------------------------------------------------------------------Mode switch---------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------Sección quienes somos---------------------------------------------------------------------------------------*/
+/* Acabado general */
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.7;
+  }
+  h1, h2 { letter-spacing: -0.01em; }
+}
+
+/* Blobs de fondo */
+.blob {
+  width: 520px; height: 520px;
+  background: radial-gradient(35% 35% at 50% 50%, rgba(59,130,246,.25), transparent 70%),
+              radial-gradient(40% 40% at 20% 20%, rgba(14,165,233,.2), transparent 70%);
+  filter: blur(40px);
+  animation: floaty 12s ease-in-out infinite;
+}
+.blob-2 {
+  width: 600px; height: 600px;
+  background: radial-gradient(35% 35% at 50% 50%, rgba(99,102,241,.22), transparent 70%),
+              radial-gradient(40% 40% at 80% 80%, rgba(56,189,248,.18), transparent 70%);
+  filter: blur(50px);
+  animation: floaty 14s ease-in-out infinite reverse;
+}
+@keyframes floaty {
+  0%,100% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(18px) translateX(10px) scale(1.02); }
+}
+
+/* Card con leve gradiente de borde/fondo */
+.card-gradient {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+  overflow: hidden;
+}
+.card-gradient::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(59,130,246,.35), rgba(14,165,233,.35), rgba(99,102,241,.35));
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+@layer base {
+  /* más aire entre líneas y cortes de texto bonitos */
+  p { text-wrap: pretty; }
+  body { line-height: 1.7; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  h1, h2 { letter-spacing: -0.01em; }
+}
+
+/*--------------------------------------------------------------------------------------------Sección quienes somos---------------------------------------------------------------------------------------*/
+
+/* Base */
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Elementos comunes */
+.surface { background: var(--color-surface); }
+.muted   { color: var(--color-muted); }
+.border  { border: 1px solid var(--color-border); }
+
+/* Botón primario (ejemplo) */
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-border);
+}
+.btn-primary:hover { filter: brightness(0.95); }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background .3s, color .3s, border-color .3s;
+}
+.theme-toggle:hover { filter: brightness(0.97); }
+
+/* Base global: que TODO herede las variables del tema */
+:root, html, body, #root {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+/* Contenedores “superficie” (tarjetas/secciones) */
+.surface,
+.card,
+.section,
+main,
+header,
+footer,
+nav {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* Links del navbar (ajústalo a tus clases si usas otras) */
+.navbar,
+.nav-inner,
+.nav-container,
+.nav-link,
+.brand {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* CTAs y botones genéricos */
+.btn,
+.button,
+.theme-toggle,
+.nav-cta {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* Botón primario (si lo usas) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-border);
+}
+.btn-primary:hover { filter: brightness(0.95); }
+
+/* Transición suave del tema */
+html, body, * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ocupa toda la ventana y usa los tokens del tema */
+.app-shell {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Contenido principal con “superficie” */
+.page-shell {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Utilidades mapeadas a variables del tema */
+@layer utilities {
+  .bg-surface { background-color: var(--color-surface); }
+  .bg-app     { background-color: var(--color-bg); }
+  .text-body  { color: var(--color-text); }
+  .text-muted { color: var(--color-muted); }
+  .border-base{ border-color: var(--color-border); }
+  .btn-primary-bg { background-color: var(--color-primary); }
+}
+
+.hero-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--hero-from) 0%, var(--hero-to) 100%);
+  opacity: var(--hero-opacity); /* controlado por variables del tema */
+}
+
+/* Si quieres apagarlo por completo en ambos temas, puedes forzar: */
+/* .hero-overlay { opacity: 0 } */
+
+html, body, #root {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.app-shell, .page-shell, main, section, header, nav, footer {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.hero-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--hero-from) 0%, var(--hero-to) 100%);
+  opacity: var(--hero-opacity);
+}
+
+/*--------------------------------------------------------------------------------------------Footer---------------------------------------------------------------------------------------*/
+
+.footer {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  background: #fff;                /* usa #0b0b0b si es dark */
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;                 /* no rompe si es pantalla chica */
+}
+
+.footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #000000;                  /* slate-900 */
+  font-weight: 600;
+}
+.footer-brand .copy { 
+  color: #64748b;                  /* slate-500 */
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.footer-devs {
+  color: #334155;                  /* slate-700 */
+  font-size: 0.95rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-btn {
+  height: 36px;
+  width: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #000000;
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.social-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
+}
+
+/* Responsive: apila en 2-3 líneas sin perder estética */
+@media (max-width: 768px) {
+  .footer-inner { justify-content: center; text-align: center; }
+  .footer-devs { width: 100%; }
+}
+
+.social-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.28);
+}
+
+
+
+/*--------------------------------------------------------------------------------------------Footer---------------------------------------------------------------------------------------*/
+
+/* Tema claro */
+body[data-theme="light"] {
+  background-color: #f9fafb; /* gris muy claro */
+  color: lch(0% 0 0);           /* azul oscuro (texto) */
+}
+
+/* Tema oscuro */
+body[data-theme="dark"] {
+  background-color: #000000; /* negro azulado (igual que tu navbar) */
+  color: #e5e7eb;            /* gris claro */
+}
+
+/* Asegura que React no aplique un fondo inesperado */
+#root {
+  background: transparent !important;
+  min-height: 100vh;
+}
+
+/* ===========================
+   MODAL DE SERVICIOS (DISEÑO)
+   =========================== */
+
+.service-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.55); /* fondo oscuro suave */
+  backdrop-filter: blur(6px); /* efecto iOS */
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1020;
+  animation: modalOverlayFade 0.25s ease-out forwards;
+}
+
+/* Contenedor de la tarjeta */
+.service-modal-content {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 620px);
+  max-height: 90vh;
+  z-index: 1030;
+
+  background-color: var(--color-surface, #000000);
+  color: var(--color-text, #e5e7eb);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  overflow-y: auto;
+
+  padding: 1.6rem 1.5rem;
+  animation: modalFadeUp 0.28s ease-out forwards;
+}
+
+/* Contenido interno en columna */
+.service-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Título */
+.service-modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary, #60a5fa);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+}
+
+/* Descripción */
+.service-modal-description {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--color-text, #e5e7eb);
+  opacity: 0.9;
+  white-space: pre-wrap;
+}
+
+/* Galería de imágenes */
+.service-modal-gallery {
+  display: grid;
+  gap: 0.6rem;
+  border-radius: 0.9rem;
+}
+
+.service-modal-image-wrapper {
+  overflow: hidden;
+  border-radius: 0.6rem;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+.service-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease-out;
+}
+
+.service-modal-image-wrapper:hover .service-modal-image {
+  transform: scale(1.03);
+}
+
+/* Botón cerrar */
+.service-modal-close {
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(
+      circle at top left,
+      rgba(148, 163, 184, 0.18),
+      transparent 50%
+    ),
+    var(--color-primary, #3b82f6);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+    filter 0.15s ease-out, background 0.15s ease-out;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6);
+}
+
+.service-modal-close:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.75);
+  filter: brightness(1.04);
+}
+
+.service-modal-close:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.6);
+}
+
+/* ===========================
+   ANIMACIONES FADE + SLIDE UP
+   =========================== */
+
+@keyframes modalOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 16px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Aparición en cascada de los elementos internos */
+.service-modal-body > * {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: modalItemFadeUp 0.32s ease-out forwards;
+}
+
+.service-modal-body > *:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.service-modal-body > *:nth-child(2) {
+  animation-delay: 0.09s;
+}
+.service-modal-body > *:nth-child(3) {
+  animation-delay: 0.14s;
+}
+.service-modal-body > *:nth-child(4) {
+  animation-delay: 0.19s;
+}
+
+@keyframes modalItemFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 640px) {
+  .service-modal-content {
+    width: 92%;
+    padding: 1.3rem 1.1rem;
+    border-radius: 1rem;
+  }
+
+  .service-modal-title {
+    font-size: 1.25rem;
+  }
+
+  .service-modal-description {
+    font-size: 0.9rem;
+  }
+}
+
+/*----------------------- BOTÓN CERRAR — EFECTO FOSFORESCENTE /*-----------------------*/ 
+.service-modal-close {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.7rem;
+
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  /* Efecto de brillo / neón */
+  box-shadow: 
+    0 0 12px rgba(59, 130, 246, 0.55),
+    0 6px 20px rgba(15, 23, 42, 0.35);
+
+  transition: 
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+.service-modal-close:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 18px rgba(96, 165, 250, 0.9),
+    0 8px 28px rgba(15, 23, 42, 0.6);
+  filter: brightness(1.08);
+}
+
+.service-modal-close:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 0 10px rgba(59, 130, 246, 0.5),
+    0 4px 18px rgba(15, 23, 42, 0.4);
+  filter: brightness(0.95);
+}
+
+/* Estilos de mensajes de estado (AGREGAR A GLOBAL.CSS) */
+.alert {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.alert.info {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.alert.success {
+  background-color: #10b981; /* Verde esmeralda */
+  color: white;
+}
+
+.alert.error {
+  background-color: #ef4444; /* Rojo */
+  color: white;
+}
+
+/* -------------------------------------- */
+/* ESTILOS PARA EL MODAL DE ÉXITO */
+/* -------------------------------------- */
+
+/* Fondo Desvanecido (Modal Backdrop) */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fondo semitransparente oscuro para el efecto desvanecido */
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque "iOS" */
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background-color: var(--color-bg); /* Fondo dinámico */
+    color: var(--color-text); /* Texto dinámico */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transition: all 0.3s ease-in-out; /* Transición para las animaciones */
+    border: 1px solid var(--color-border);
+}
+
+.modal-title {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-message {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.modal-countdown {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+/* Clases de Animación (Usadas en ModalExito.jsx) */
+
+/* Estado inicial / Salida */
+.modal-hide {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+}
+
+/* Estado de entrada */
+.modal-show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* === BOTÓN X FOSFORESCENTE SUPERIOR DERECHA === */
+
+.contact-modal-close-x {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #00f7ff; /* Cian fosforescente */
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+
+    /* Efecto Glow bonito */
+    box-shadow:
+        0 0 8px #00eaff7c,
+        0 0 18px #00eaff55;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-modal-close-x:hover {
+    transform: scale(1.15);
+
+    color: #ffffff;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    /* Glow más fuerte */
+    box-shadow:
+        0 0 10px #00faff,
+        0 0 25px #00ffee,
+        0 0 40px #00fbff;
+}
+
+.contact-modal-close-x:active {
+    transform: scale(0.9);
+}
+
+
+/*----------------------------------------------------------------------  Blog  -----------------------------------------------------------------------------------*/
+
+/* ===========================
+   BLOG – LISTA
+   =========================== */
+
+.blog-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.blog-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.blog-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: var(--color-text, #e5e7eb);
+}
+
+.blog-hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 0.98rem;
+  color: var(--color-muted, #9ca3af);
+}
+
+.blog-grid {
+  display: grid;
+  gap: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface, #000000);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.5);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px rgba(15, 23, 42, 0.75);
+  border-color: rgba(96, 165, 250, 0.8);
+}
+
+.blog-card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 170px;
+}
+
+.blog-card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-card-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.blog-card-body {
+  padding: 1rem 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.blog-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--color-muted, #9ca3af);
+}
+
+.blog-card-tag {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  background: rgba(37, 99, 235, 0.12);
+  color: #93c5fd;
+}
+
+.blog-card-date {
+  opacity: 0.8;
+}
+
+.blog-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text, #e5e7eb);
+}
+
+.blog-card-summary {
+  font-size: 0.9rem;
+  color: var(--color-muted, #9ca3af);
+}
+
+.blog-card-footer {
+  margin-top: 0.4rem;
+}
+
+.blog-card-readmore {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #60a5fa;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding-bottom: 0.05rem;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.5);
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.blog-card-readmore:hover {
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   BLOG – ARTÍCULO
+   =========================== */
+
+.blog-post-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blog-post-header {
+  text-align: left;
+}
+
+.blog-post-tag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: rgba(37, 99, 235, 0.16);
+  color: #bfdbfe;
+}
+
+.blog-post-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--color-text, #e5e7eb);
+}
+
+.blog-post-meta {
+  font-size: 0.88rem;
+  color: var(--color-muted, #9ca3af);
+}
+
+.blog-post-image-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
+}
+
+.blog-post-image-wrapper img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.blog-post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--color-text, #e5e7eb);
+}
+
+.blog-post-content p {
+  text-align: justify;
+}
+
+.blog-post-footer {
+  margin-top: 1.4rem;
+}
+
+.blog-back-link {
+  font-size: 0.9rem;
+  color: #60a5fa;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.5);
+  padding-bottom: 0.05rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.blog-back-link:hover {
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.9);
+}
+
+/* Artículo no encontrado */
+.blog-post-not-found {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+/* ===========================
+   BLOG – ARTÍCULO (Compacto Profesional)
+   =========================== */
+
+.blog-post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* separación más compacta */
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55; /* compacto elegante */
+  letter-spacing: -0.005em; /* más premium */
+  color: var(--color-text, #e5e7eb);
+}
+
+.blog-post-content p {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  color: var(--color-text, #e5e7eb);
+}
+
+/* Listas (números y bullets) */
+.blog-post-content ul,
+.blog-post-content ol {
+  margin: 0.5rem 0 0.5rem 1rem;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.blog-post-content li {
+  margin-bottom: 0.4rem;
+}
+
+/* Títulos dentro del artículo */
+.blog-post-content h2,
+.blog-post-content h3 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text, #e5e7eb);
+}
+
+/* --- CSS para la Animación de Entrada (Fade-in-up) --- */
+
+/* Base de la clase para que los elementos sean invisibles al inicio */
+.opacity-0 {
+    opacity: 0;
+}
+
+/* Esta clase es la que inicia en el JSX */
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Definición de la animación */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================================
+   ANIMACIÓN FADE-IN-UP EN CASCADA (SOLO BLOG)
+   =========================================== */
+
+/* Hero del blog: título + descripción */
+.blog-hero {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: blogFadeUp 0.45s ease-out forwards;
+  animation-delay: 0.05s;
+}
+
+/* Cada tarjeta del grid aparece en cascada */
+.blog-card {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: blogFadeUp 0.45s ease-out forwards;
+}
+
+/* Delays en cascada para las tarjetas */
+.blog-card:nth-child(1) {
+  animation-delay: 0.12s;
+}
+
+.blog-card:nth-child(2) {
+  animation-delay: 0.20s;
+}
+
+.blog-card:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+/* Si algún día tienes más posts, puedes seguir así: */
+.blog-card:nth-child(4) {
+  animation-delay: 0.36s;
+}
+.blog-card:nth-child(5) {
+  animation-delay: 0.44s;
+}
+.blog-card:nth-child(6) {
+  animation-delay: 0.52s;
+}
+
+/* Keyframes generales del efecto fade + slide up */
+@keyframes blogFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================================
+   BLOG — TAG DE CATEGORÍA (VERSIÓN PRO)
+   =========================================== */
+
+.blog-card-tag {
+  display: inline-block;
+  padding: 0.28rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  background: rgba(96, 165, 250, 0.28);   /* Fondo más marcado */
+  color: #1d4ed8;                         /* Azul vibrante */
+  backdrop-filter: blur(6px);
+
+  /* Glow base */
+  box-shadow:
+    0 0 10px rgba(96, 165, 250, 0.55),
+    0 0 18px rgba(147, 197, 253, 0.45);
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+
+  /* 🔵 Pulso suave */
+  animation: blogTagPulse 2.3s ease-in-out infinite alternate;
+}
+
+/* MODO OSCURO — Más fosforescente */
+[data-theme="dark"] .blog-card-tag {
+  background: rgba(59, 130, 246, 0.32);
+  color: #dbeafe;
+  box-shadow:
+    0 0 14px rgba(96, 165, 250, 0.95),
+    0 0 26px rgba(37, 99, 235, 0.8);
+}
+
+/* ✨ Destello / Shine al hacer hover sobre la tarjeta */
+.blog-card-tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.85) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transform: translateX(-130%);
+}
+
+/* Shine + glow más fuerte cuando se hace hover */
+.blog-card:hover .blog-card-tag {
+  transform: translateY(-1px) scale(1.03);
+  color: #3b82f6;
+  box-shadow:
+    0 0 22px rgba(96, 165, 250, 1),
+    0 0 32px rgba(147, 197, 253, 0.8);
+}
+
+.blog-card:hover .blog-card-tag::before {
+  opacity: 1;
+  animation: blogTagShine 0.9s ease-out forwards;
+}
+
+/* =====================================
+   KEYFRAMES — Pulso y destello elegante
+   ===================================== */
+
+@keyframes blogTagPulse {
+  0% {
+    box-shadow:
+      0 0 10px rgba(96, 165, 250, 0.45),
+      0 0 18px rgba(147, 197, 253, 0.35);
+  }
+  100% {
+    box-shadow:
+      0 0 22px rgba(96, 165, 250, 0.95),
+      0 0 32px rgba(147, 197, 253, 0.75);
+  }
+}
+
+/* Shine animado */
+@keyframes blogTagShine {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+/* ===========================================
+   ETIQUETAS / TAGS GLOBALES – ANIMADAS PRO
+   =========================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.35rem 1.05rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  background: rgba(96, 165, 250, 0.28);            /* Más visible */
+  color: #1d4ed8;                                  /* Azul fuerte */
+  backdrop-filter: blur(8px);
+
+  /* Glow mejorado */
+  box-shadow: 
+    0 0 12px rgba(96, 165, 250, 0.7),
+    0 0 20px rgba(96, 165, 250, 0.5);
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.28s ease;
+
+  /* 🔵 Pulso elegante */
+  animation: tagPulse 2.2s ease-in-out infinite alternate;
+}
+
+/* ==============================
+   DARK MODE — Más fuerte aún
+============================== */
+[data-theme="dark"] .tag {
+  background: rgba(59, 130, 246, 0.30);
+  color: #dbeafe;
+  box-shadow:
+    0 0 14px rgba(96, 165, 250, 0.95),
+    0 0 30px rgba(37, 99, 235, 0.9);
+}
+
+/* ✨ Destello animado */
+.tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.85) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transform: translateX(-140%);
+}
+
+.tag:hover::before {
+  opacity: 1;
+  animation: tagShine 1s ease-out forwards;
+}
+
+/* Movimiento suave del tag */
+.tag:hover {
+  transform: translateY(-1.5px) scale(1.03);
+  box-shadow:
+    0 0 25px rgba(96, 165, 250, 1),
+    0 0 40px rgba(147, 197, 253, 0.8);
+}
+
+/* =======================
+   KEYFRAMES MEJORADOS
+======================= */
+
+/* Pulso mucho más visible */
+@keyframes tagPulse {
+  0% {
+    box-shadow:
+      0 0 10px rgba(96, 165, 250, 0.45),
+      0 0 20px rgba(96, 165, 250, 0.35);
+  }
+  100% {
+    box-shadow:
+      0 0 22px rgba(96, 165, 250, 0.95),
+      0 0 35px rgba(147, 197, 253, 0.75);
+  }
+}
+
+/* Brillo que cruza */
+@keyframes tagShine {
+  0% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+/*----------------------------------------------------------------------  Blog  -----------------------------------------------------------------------------------*/
+
+/* ==============================
+   TARJETA DE CONTACTO
+   ============================== */
+
+.card-contacto {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 2.25rem;
+  border-radius: 1.75rem;
+
+  background: #ffffff; /* modo día */
+  color: #0f172a;
+
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.16);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* MODO NOCHE: fondo oscuro + texto claro */
+[data-theme="dark"] .card-contacto {
+  background: #000000;
+  color: #e5e7eb;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Título y subtítulo */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="dark"] .card-subtitle {
+  color: #9ca3af;
+}
+
+/* ==============================
+   FORMULARIO
+   ============================== */
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+[data-theme="dark"] .form-group label {
+  color: #e5e7eb;
+}
+
+/* Inputs y textarea – modo día */
+.form-contacto input,
+.form-contacto textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  background: #f9fafb;
+  color: #0f172a;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease, color 0.18s ease;
+}
+
+/* Inputs y textarea – modo noche */
+[data-theme="dark"] .form-contacto input,
+[data-theme="dark"] .form-contacto textarea {
+  background: #000000;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+}
+
+/* Focus */
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.75);
+}
+
+/* Placeholders */
+.form-contacto input::placeholder,
+.form-contacto textarea::placeholder {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .form-contacto input::placeholder,
+[data-theme="dark"] .form-contacto textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Botón principal (por si quieres reforzar) */
+.btn-primary {
+  margin-top: 0.5rem;
+  width: 100%;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Mensajes de alerta */
+.alert {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.alert.error {
+  color: #b91c1c;
+}
+
+.alert.info {
+  color: #2563eb;
+}
+
+[data-theme="dark"] .alert.error {
+  color: #fecaca;
+}
+
+[data-theme="dark"] .alert.info {
+  color: #93c5fd;
+}
+
+/* Elimina cualquier tarjeta blanca interna en el formulario */
+[data-theme="dark"] .card-contacto .form-contacto,
+[data-theme="dark"] .card-contacto form {
+  background: transparent !important;
+}
+
+/* Modo noche: tarjeta totalmente oscura */
+[data-theme="dark"] .card-contacto {
+  background: #0a0a0a;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="dark"] .form-contacto input,
+[data-theme="dark"] .form-contacto textarea {
+  background: #0a0a0a; /* negro elegante */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ==============================
+   FORM CONTACTO – VERSIÓN COMPACTA
+   ============================== */
+
+/* Hacemos la tarjeta un poco más pequeña */
+.card-contacto {
+  max-width: 500px;              /* antes 520 aprox */
+  padding: 1.6rem 1.8rem;        /* menos padding vertical y horizontal */
+}
+
+/* Título y subtítulo más compactos */
+.card-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+/* Reducimos espacios entre campos */
+.form-contacto {
+  gap: 0.85rem;
+}
+
+.form-group {
+  gap: 0.25rem;
+}
+
+/* Inputs un poco más bajitos */
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+/* Textarea más bajo para que el total no sea tan alto */
+.form-contacto textarea {
+  min-height: 120px;   /* en lugar de algo tipo 150–180px */
+}
+
+/* Botón ligeramente más compacto */
+.btn-primary {
+  margin-top: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+/*=CORRECCION PANTALLA QUIENES=*/
+
+/* 1) Fondo de la sección (el gradiente súper claro del fondo) */
+[data-theme="dark"] .bg-slate-50\/50 {
+  /* Sustituimos el fondo lechoso por uno oscuro con un poco de glow arriba */
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.7), #020617 55%, #000000 100%);
+}
+
+/* 2) Tarjetas blancas (Misión, Visión, Valores, banda de KPIs, etc.) */
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/90 {
+  background-color: #020617 !important;       /* tarjeta oscura */
+}
+
+/* 3) Bordes / rings claros de las tarjetas */
+[data-theme="dark"] .ring-slate-200,
+[data-theme="dark"] .border-blue-100\/50,
+[data-theme="dark"] .ring-slate-200,
+[data-theme="dark"] .divide-slate-200 {
+  border-color: rgba(148, 163, 184, 0.4) !important;
+  --tw-ring-color: rgba(148, 163, 184, 0.4);
+}
+
+/* 4) Textos que eran oscuros (para que no se pierdan en el fondo negro) */
+[data-theme="dark"] .text-slate-900,
+[data-theme="dark"] .text-slate-800,
+[data-theme="dark"] .text-slate-700 {
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .text-slate-600 {
+  color: #9ca3af !important;
+}
+
+/* 5) Hover de las tarjetas (mantener el efecto “iluminado”) */
+[data-theme="dark"] .hover\:bg-blue-50\/50:hover {
+  background-color: rgba(37, 99, 235, 0.25) !important;  /* azulito suave sobre fondo negro */
+}
+
+/* 6) Tarjetas internas de “Valores” (bg-white) */
+[data-theme="dark"] .bg-white {
+  background-color: #020617 !important;
+}
+
+/* Todas las tarjetas claras → NEGRO */
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/90,
+[data-theme="dark"] .bg-slate-50,
+[data-theme="dark"] .bg-slate-100,
+[data-theme="dark"] .bg-blue-50\/50,
+[data-theme="dark"] .bg-white\/80 {
+  background-color: #000000 !important;
+  backdrop-filter: none !important;
+}
+
+/* Borde también más neutral */
+[data-theme="dark"] .ring-slate-200,
+[data-theme="dark"] .border-blue-100\/50,
+[data-theme="dark"] .ring-blue-500\/80 {
+  --tw-ring-color: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* Tarjetas internas de Valores (tenían bg-white) */
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
+
+/* Quita cualquier tinte azul residual (el shadow) */
+[data-theme="dark"] .shadow-blue-300\/50,
+[data-theme="dark"] .shadow-blue-300 {
+  --tw-shadow-color: rgba(0,0,0,0.6) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45) !important;
+}
+
+/* Hovers (azul claro suave sobre negro) */
+[data-theme="dark"] .hover\:bg-blue-50\/50:hover {
+  background-color: rgba(37, 99, 235, 0.22) !important;
+}
+
+/* Tarjetas que en modo claro son blancas, ahora negro profesional */
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/90,
+[data-theme="dark"] .bg-white\/80,
+[data-theme="dark"] .bg-slate-50,
+[data-theme="dark"] .bg-slate-100,
+[data-theme="dark"] .bg-blue-50\/50 {
+  background-color: #0a0a0a !important; /* Negro suave Vercel */
+  backdrop-filter: none !important;
+}
+
+/* Bordes muy sutiles, gris claro tipo Vercel */
+[data-theme="dark"] .ring-slate-200,
+[data-theme="dark"] .border-blue-100\/50,
+[data-theme="dark"] .ring-blue-500\/80 {
+  --tw-ring-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .shadow-blue-300\/50,
+[data-theme="dark"] .shadow-blue-300 {
+  --tw-shadow-color: rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .hover\:bg-blue-50\/50:hover {
+  background-color: rgba(37, 99, 235, 0.15) !important;
+}
+
+/* =========================================
+   PARTNERS – Tarjetas SIEMPRE blancas
+   ========================================= */
+
+/* En modo claro ya son blancas, pero lo dejamos explícito */
+.partner-card {
+  background-color: #ffffff;
+}
+
+/* En modo oscuro: ignorar overrides globales de bg-white */
+[data-theme="dark"] .partner-card {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 1) !important; /* similar a ring-slate-200 */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);     /* se ve pro sobre fondo negro */
+}
+
+/* Opcional: que el logo se vea limpio, sin filtros raros */
+[data-theme="dark"] .partner-card img {
+  filter: none;
+}
+
+/* ==========================================================
+   PARTNERS — Glow Azul Premium (tipo vitrinas)
+   ========================================================== */
+
+/* Glow base suave */
+.partner-card {
+  position: relative;
+  background: #ffffff;
+  transition: all 0.35s ease;
+  border-radius: 1rem;
+}
+
+/* Sombra difusa siempre visible (modo profesional) */
+.partner-card::before {
+  content: "";
+  position: absolute;
+  inset: -4px; /* tamaño del glow */
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.28),
+    rgba(59, 130, 246, 0.05) 70%,
+    transparent 100%
+  );
+  opacity: 0.55;
+  z-index: -1;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover con glow más intenso y nítido */
+.partner-card:hover::before {
+  opacity: 0.9;
+  transform: scale(1.04);
+}
+
+/* DARK MODE — más contraste, más elegancia */
+[data-theme="dark"] .partner-card::before {
+  background: radial-gradient(
+    circle at center,
+    rgba(96, 165, 250, 0.55),
+    rgba(96, 165, 250, 0.15) 65%,
+    transparent 100%
+  );
+}
+
+
+/* ========================================================== ========================================================== ==========================================================
+   PARTNERS — Tarjetas de Vidrio Esmerilado (Glassmorphism)
+   ========================================================== */
+
+.partner-card {
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.22); /* blanco translúcido */
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.35s ease;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 rgba(255, 255, 255, 0);
+}
+
+/* Hover elegante tipo “panel de vidrio activado” */
+.partner-card:hover {
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 6px 26px rgba(0, 0, 0, 0.2),
+    -2px -2px 8px rgba(255, 255, 255, 0.4),
+    2px 2px 12px rgba(96, 165, 250, 0.30); /* Glow azul premium */
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* =============================
+   DARK MODE — vidrio oscuro
+   ============================= */
+[data-theme="dark"] .partner-card {
+  background: rgba(15, 23, 42, 0.45); /* slate-900 transparente */
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 4px 22px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 rgba(255, 255, 255, 0);
+}
+
+[data-theme="dark"] .partner-card:hover {
+  background: rgba(30, 41, 59, 0.55); /* slate-800 transparente */
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(96, 165, 250, 0.45); /* Glow azul más fuerte */
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ==========================================================
+   PARTNERS — Estilo iOS 17 / visionOS (Glass Líquido)
+   ========================================================== */
+
+.partner-card {
+  position: relative;
+  border-radius: 1.4rem;
+  overflow: hidden;
+
+  /* Fondo base translúcido tipo widget iOS */
+  background: radial-gradient(circle at top left,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.45) 45%,
+      rgba(248, 250, 252, 0.25) 100%);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(148, 163, 184, 0.10);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease, background 0.3s ease;
+}
+
+/* Highlight interno suave (como el brillo de los widgets) */
+.partner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top,
+      rgba(255, 255, 255, 0.6),
+      transparent 55%);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Overlay muy sutil de color frío (azulito iOS) */
+.partner-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(191, 219, 254, 0.18),
+    rgba(219, 234, 254, 0.08),
+    transparent
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Hover — flota un poquito y se ve más “líquido” */
+.partner-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.25),
+    0 0 0 1px rgba(129, 140, 248, 0.22);
+  border-color: rgba(191, 219, 254, 0.9);
+
+  background: radial-gradient(circle at top left,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.58) 45%,
+      rgba(241, 245, 249, 0.3) 100%);
+}
+
+/* Ajuste del logo dentro (que no se vea raro) */
+.partner-card img {
+  position: relative;
+  z-index: 1; /* por encima del blur y overlays */
+}
+
+/* =============================
+   DARK MODE — glass oscuro iOS
+   ============================= */
+
+[data-theme="dark"] .partner-card {
+  background: radial-gradient(circle at top left,
+      rgba(30, 64, 175, 0.45),
+      rgba(15, 23, 42, 0.92) 45%,
+      rgba(15, 23, 42, 0.98) 100%);
+  border-color: rgba(148, 163, 184, 0.45);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* highlight en dark mode */
+[data-theme="dark"] .partner-card::before {
+  background: radial-gradient(circle at top,
+      rgba(248, 250, 252, 0.35),
+      transparent 60%);
+  opacity: 0.9;
+}
+
+/* overlay azul más marcado en dark */
+[data-theme="dark"] .partner-card::after {
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.40),
+    rgba(129, 140, 248, 0.28),
+    transparent
+  );
+}
+
+/* Hover en dark: más glow y un poco más de luz */
+[data-theme="dark"] .partner-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.95),
+    0 0 26px rgba(96, 165, 250, 0.65);
+  border-color: rgba(191, 219, 254, 0.85);
+}
+
+/* ========================================================== SERVICIOS — Tarjetas estilo iOS 17 / visionOS (aplicado a las tarjetas del grid de servicios) ========================================================== */
+
+/* LIGHT MODE — vidrio blanco tipo widget */
+#grid-servicios .grid > * {
+  position: relative;
+  border-radius: 1.4rem;
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.96),
+    rgba(248, 250, 252, 0.90) 45%,
+    rgba(241, 245, 249, 0.82) 100%
+  ) !important;
+
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(148, 163, 184, 0.12);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+}
+
+/* Brillo superior suave tipo iOS */
+#grid-servicios .grid > *::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.6),
+    transparent 60%
+  );
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Capa fría azul muy sutil */
+#grid-servicios .grid > *::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(191, 219, 254, 0.20),
+    rgba(219, 234, 254, 0.10),
+    transparent
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Hover — flota un poquito y se ilumina */
+#grid-servicios .grid > *:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow:
+    0 22px 60px rgba(15, 23, 42, 0.22),
+    0 0 0 1px rgba(129, 140, 248, 0.22);
+  border-color: rgba(191, 219, 254, 0.96) !important;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.99),
+    rgba(248, 250, 252, 0.94) 45%,
+    rgba(241, 245, 249, 0.88) 100%
+  ) !important;
+}
+
+/* Aseguramos que el contenido vaya encima del vidrio */
+#grid-servicios .grid > * > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================
+   DARK MODE — vidrio oscuro iOS
+   ============================= */
+
+[data-theme="dark"] #grid-servicios .grid > * {
+  background: radial-gradient(
+    circle at top left,
+    rgba(30, 64, 175, 0.40),
+    rgba(15, 23, 42, 0.96) 45%,
+    rgba(15, 23, 42, 0.99) 100%
+  ) !important;
+
+  border-color: rgba(148, 163, 184, 0.45) !important;
+  box-shadow:
+    0 24px 65px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
+
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+}
+
+/* highlight en dark */
+[data-theme="dark"] #grid-servicios .grid > *::before {
+  background: radial-gradient(
+    circle at top,
+    rgba(248, 250, 252, 0.28),
+    transparent 60%
+  );
+  opacity: 0.95;
+}
+
+/* overlay más azul en dark */
+[data-theme="dark"] #grid-servicios .grid > *::after {
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.40),
+    rgba(129, 140, 248, 0.28),
+    transparent
+  );
+}
+
+/* Hover en dark: más glow y profundidad */
+[data-theme="dark"] #grid-servicios .grid > *:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 26px 75px rgba(0, 0, 0, 0.98),
+    0 0 26px rgba(96, 165, 250, 0.60);
+  border-color: rgba(191, 219, 254, 0.88) !important;
+}
+
+/* ============================================== SERVICIOS — Tarjetas estilo iOS 17 / visionOS (aplicado a las tarjetas del grid de servicios) ============================================ */
+
+/* ================================================================================== CSS para el cuadro de la sesión ============================================================================ */
+
+.user-menu-dropdown {
+  animation: userMenuFadeSlide 250ms ease-out;
+  transform-origin: top right;
+}
+
+@keyframes userMenuFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+
+
+.user-menu-dropdown {
+  animation: userMenuFadeSlide 180ms ease-out;
+  transform-origin: top right;
+}
+
+@keyframes userMenuFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================================================================================== CSS para el cuadro de la sesión ============================================================================ */
+
+/* ================================================================================== Ingresar como admin ============================================================================ */
+
+.admin-floating-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3000;
+
+  height: 52px;
+  width: 52px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  background: #020617; /* luego lo podemos adaptar a claro/oscuro */
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.6);
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.admin-floating-button img {
+  height: 26px;
+  width: 26px;
+  object-fit: contain;
+}
+
+.admin-floating-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.8);
+  background-color: #111827;
+  border-color: rgba(129, 140, 248, 0.9);
+}
+
+/* ================================================================================== Ingresar como admin ============================================================================ */
+
+/*--------------------------------------------------------------------------------------------Responsive---------------------------------------------------------------------------------------*/
+
+/* 1) Que todo mida con border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2) Reset básico */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3) Que el body no tenga scroll horizontal raro */
+body {
+  overflow-x: hidden;
+}
+
+/* 4) Imágenes flexibles: nunca pasan el ancho del contenedor */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5) Contenedor principal reutilizable */
+.container {
+  width: 100%;
+  max-width: 1120px;   /* puedes ajustar 1100–1200 */
+  margin: 0 auto;
+  padding: 0 1.25rem;  /* margen lateral para que no pegue a los bordes */
+}
+
+/* ===========================
+   NAVBAR RESPONSIVE SOLO CSS
+   =========================== */
+
+.navbar {
+  /* por si no lo tenías */
+  width: 100%;
+}
+
+/* En escritorio se queda todo como está ahora.
+   Solo cambiamos comportamiento en <= 768px */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-wrap: wrap;           /* permite que se hagan varias filas */
+    align-items: flex-start;
+    row-gap: 0.35rem;
+  }
+
+  /* Logo a la izquierda, arriba */
+  .brand {
+    margin-right: auto;
+  }
+
+  /* Links en una fila que puede romperse a dos líneas */
+  .nav-links {
+    flex-basis: 100% !important;     /* ocupa todo el ancho debajo del logo */
+    order: 2;                        /* va después del logo */
+    justify-content: flex-start !important;
+    flex-wrap: wrap;                 /* permite que los textos bajen de renglón */
+    column-gap: 0.75rem;
+    row-gap: 0.15rem;
+    font-size: 0.82rem;
+    white-space: normal;             /* permite saltos de línea en los textos largos */
+  }
+
+  /* Botones de la derecha debajo de los links */
+  .nav-controls {
+    flex-basis: 100% !important;
+    order: 3;
+    justify-content: flex-start;
+    padding-right: 0;                /* que no se corte por la derecha */
+    margin-top: 0.25rem;
+    column-gap: 0.4rem;
+    row-gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* Ajustar tamaños de botones para que no se vean gigantes */
+  .nav-auth-btn,
+  .theme-toggle {
+    font-size: 0.8rem !important;
+    padding: 6px 10px;
+  }
+
+  /* Por si el nombre del usuario es largo */
+  .user-menu-wrapper button span:nth-child(2) {
+    max-width: 90px;
+  }
+}
+
+/* Ajuste extra para pantallas MUY pequeñas (ej. iPhone SE) */
+@media (max-width: 400px) {
+  .nav-links {
+    font-size: 0.78rem;
+  }
+
+  .nav-auth-btn,
+  .theme-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   HAMBURGUER MENU
+   ========================= */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 4px;
+}
+
+/* MODO OSCURO automático: */
+.dark .menu-toggle span {
+  background: #e5e7eb;
+}
+
+/* ======== BREAKPOINT ======== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  /* Ocultar secciones */
+  .nav-links,
+  .nav-controls {
+    display: none;
+  }
+
+  /* Cuando el menú está abierto… */
+  .show-menu {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0.3rem;
+    gap: 0.7rem;
+  }
+
+  /* Mejor distribución visual */
+  .nav-links.show-menu {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    row-gap: 0.3rem;
+  }
+
+  .nav-controls.show-menu {
+    margin-top: 0.6rem;
+    row-gap: 0.4rem;
+  }
+
+  /* Botones full-width opcional */
+  .nav-auth-btn,
+  .theme-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   NAVBAR: BOTÓN HAMBURGUESA
+   ========================= */
+
+/* Por defecto el botón no se ve (solo móvil) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+}
+
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 999px;
+}
+
+/* Si usas clase .dark en el body o root para modo oscuro */
+.dark .menu-toggle span {
+  background: #e5e7eb;
+}
+
+/* ====== VERSIÓN MÓVIL ====== */
+@media (max-width: 768px) {
+  /* Mostrar el botón hamburguesa */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Ocultar links y controles por defecto */
+  .nav-links,
+  .nav-controls {
+    display: none !important;
+  }
+
+  /* Cuando el estado menuOpen = true (clase show-menu),
+     se muestran en columna ocupando todo el ancho */
+  .show-menu {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+    margin-top: 0.6rem;
+  }
+
+  .nav-links.show-menu {
+    font-size: 0.95rem;
+  }
+
+  .nav-controls.show-menu {
+    margin-top: 0.4rem;
+  }
+
+  /* Botones full-width para que se vean bonitos en móvil */
+  .nav-auth-btn,
+  .theme-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =============================
+   HERO CTAS – ANIMACIÓN + GLOW
+   ============================= */
+
+/* 1) Keyframes de aparición (fade + slide up + ligero zoom) */
+@keyframes heroCtaFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 2) Estilo base para los dos botones del hero */
+.mt-8.flex.flex-wrap.gap-4 a {
+  position: relative;
+  border-radius: 999px; /* más pill forma iOS */
+  animation: heroCtaFadeUp 0.7s ease-out forwards;
+  opacity: 0; /* arranca invisible y la animación lo muestra */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 3) Delay escalonado para el segundo botón */
+.mt-8.flex.flex-wrap.gap-4 a:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+/* 4) Glow suave tipo iOS (primario) */
+.mt-8.flex.flex-wrap.gap-4 a:first-child {
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.45),
+    0 0 0 1px rgba(191, 219, 254, 0.6);
+}
+
+/* 5) Glow más discreto para el secundario */
+.mt-8.flex.flex-wrap.gap-4 a:nth-child(2) {
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(226, 232, 240, 0.9);
+}
+
+/* 6) Hover sutil (para móvil casi no se nota, pero en desktop se siente pro) */
+.mt-8.flex.flex-wrap.gap-4 a:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.35),
+    0 0 0 1px rgba(191, 219, 254, 0.7);
+}
+
+/* HERO – RESPONSIVE BOTONES */
+@media (max-width: 768px) {
+  .mt-8.flex.flex-wrap.gap-4 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .mt-8.flex.flex-wrap.gap-4 a {
+    width: 90% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+/*--------------------------------------------------------NUESTROS SERVICIOS--------------------------------------------------------*/
+
+/* ================================================
+   CTAs "Nuestros Servicios" – ANIMACIÓN + GLOW
+   ================================================ */
+
+/* Enlaces / botones dentro del bloque de servicios */
+.mt-8.flex.justify-center.gap-4 a,
+.mt-8.flex.justify-center.gap-4 button {
+  position: relative;
+  border-radius: 999px;
+  animation: heroCtaFadeUp 0.7s ease-out forwards;
+  opacity: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Pequeño delay escalonado para el segundo botón */
+.mt-8.flex.justify-center.gap-4 a:nth-child(1),
+.mt-8.flex.justify-center.gap-4 button:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.mt-8.flex.justify-center.gap-4 a:nth-child(2),
+.mt-8.flex.justify-center.gap-4 button:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+/* Glow más fuerte para "Ver servicios" (primero) */
+.mt-8.flex.justify-center.gap-4 a:first-child {
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.45),
+    0 0 0 1px rgba(191, 219, 254, 0.5);
+}
+
+/* Glow suave para "Solicitar información" (segundo) */
+.mt-8.flex.justify-center.gap-4 button {
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(226, 232, 240, 0.9);
+}
+
+/* Hover sutil */
+.mt-8.flex.justify-center.gap-4 a:hover,
+.mt-8.flex.justify-center.gap-4 button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.35),
+    0 0 0 1px rgba(191, 219, 254, 0.7);
+}
+
+/* CTAs "Nuestros Servicios" – RESPONSIVE */
+@media (max-width: 768px) {
+  .mt-8.flex.justify-center.gap-4 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .mt-8.flex.justify-center.gap-4 a,
+  .mt-8.flex.justify-center.gap-4 button {
+    width: 90% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+/* ======================================
+   CENTRAR SOLO TÍTULOS Y TEXTOS EN MÓVIL
+   (NO AFECTA PARTNERS NI LOGOS)
+   ====================================== */
+@media (max-width: 768px) {
+
+  /* Títulos principales */
+  h1, h2, h3 {
+    text-align: center !important;
+  }
+
+  /* Subtítulos / párrafos descriptivos */
+  p {
+    text-align: center !important;
+  }
+
+  /* Tags como “Soluciones profesionales”, “Marcas y aliados”, etc. */
+  .tag {
+    display: block !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Contenedores de texto (pero NO grids, NO partners) */
+  .delay-150:not(.partners),
+  .delay-200:not(.partners),
+  .delay-300:not(.partners),
+  .delay-400:not(.partners) {
+    text-align: center !important;
+  }
+}
+
+/* ==========================================
+   ETIQUETA / TAG – ESTILO iOS PROFESIONAL
+   ========================================== */
+
+.tag-ios {
+  display: inline-block;
+  padding: 8px 18px;                   /* compacto */
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgb(30, 64, 175);             /* azul iOS */
+  background: rgba(191, 219, 254, 0.55);
+  border-radius: 999px;                /* pill shape */
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 24px rgba(59, 130, 246, 0.25),
+    0 0 0 1px rgba(147, 197, 253, 0.9); /* borde + glow iOS */
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Opcional → mejor tamaño en móvil */
+@media (max-width: 768px) {
+  .tag-ios {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* ============ BOTONES DEL NAV EN MÓVIL ============ */
+@media (max-width: 640px) {
+
+  /* Botón Ingresar */
+  .nav-auth-btn {
+    width: 90% !important;
+    max-width: 300px;
+    margin: 6px auto !important;
+    padding: 8px 12px !important;
+    font-size: 0.85rem !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Botón Registrarse (gradient) */
+  .nav-auth-signup {
+    width: 90% !important;
+    max-width: 300px;
+    margin: 6px auto !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Botón Día/Noche */
+  .theme-toggle {
+    width: 90% !important;
+    max-width: 300px;
+    margin: 6px auto !important;
+    padding: 10px 12px !important;
+    border-radius: 30px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Compactar botones del menú en responsive */
+@media (max-width: 768px) {
+  .nav-auth-btn,
+  .nav-auth-signup,
+  .theme-toggle {
+    width: 50%;          /* más compactos horizontalmente */
+    max-width: 260px;    /* límite para que no sean gigantes */
+    margin: 4px auto;    /* centrados */
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/*--------------------------------------------------------------------------------------------Responsive---------------------------------------------------------------------------------------*/

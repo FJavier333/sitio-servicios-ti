@@ -1,0 +1,29 @@
+/* Modo día: fondo blanco, texto negro */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #0a0a0a;
+  --color-muted: #6b7280;   /* gris texto secundario */
+  --color-primary: #2563eb; /* tu azul de marca */
+  --color-border: #e5e7eb;
+
+  /* Overlay del hero (solo para claro) */
+  --hero-from: #ffffff;
+  --hero-to: #f8fafc;
+  --hero-opacity: 0.0; /* sin velo */
+}
+
+/* Modo noche: fondo negro, texto blanco */
+.dark {
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-text: #ffffff;
+  --color-muted: #c4c4c4;
+  --color-primary: #3b82f6;
+  --color-border: #27272a;
+
+  /* En oscuro NO queremos velo gris */
+  --hero-from: #0a0a0a;
+  --hero-to: #0a0a0a;
+  --hero-opacity: 0.0; /* sin velo */
+}
