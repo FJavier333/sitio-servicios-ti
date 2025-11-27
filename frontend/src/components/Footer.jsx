@@ -489,7 +489,7 @@ export default function Footer() {
 
                 try {
                   const response = await fetch(
-                    "https://icomp-backend.onrender.com/api/login",
+                    "https://icomp-backend.onrender.com/login",
                     {
                       method: "POST",
                       headers: {
