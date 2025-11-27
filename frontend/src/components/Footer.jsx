@@ -148,9 +148,10 @@ export default function Footer() {
               © {year} Todos los derechos reservados.
             </span>
 
-            <a href="/aviso-de-privacidad" style={linkStyle}>
-              Aviso de Privacidad
-            </a>
+            <Link to="/aviso-de-privacidad" style={linkStyle}>
+               Aviso de Privacidad
+            </Link>
+
 
             <div className="footer-devs" style={devsStyle}>
               Desarrollado por <strong>ProTech Dev</strong>
