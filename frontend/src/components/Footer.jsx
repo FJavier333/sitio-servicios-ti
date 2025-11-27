@@ -8,7 +8,7 @@ export default function Footer() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
-  // Saber si hay un admin logueado (se llenará cuando hagamos el login de admin)
+  // hSaber si hay un admin logueado (se llenará cuando hagamos el login de admin)
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [isAdminLogged, setIsAdminLogged] = useState(false);
   const [adminToast, setAdminToast] = useState(null);
