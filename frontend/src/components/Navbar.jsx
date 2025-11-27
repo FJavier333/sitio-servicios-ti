@@ -547,7 +547,7 @@ export default function Navbar() {
 
                 try {
                   const response = await fetch(
-                    "http://localhost:4000/api/auth/login",
+                    "https://icomp-backend.onrender.com/",
                     {
                       method: "POST",
                       headers: {
@@ -763,7 +763,7 @@ export default function Navbar() {
 
                 try {
                   const response = await fetch(
-                    "http://localhost:4000/api/auth/register",
+                    "https://icomp-backend.onrender.com/",
                     {
                       method: "POST",
                       headers: {
