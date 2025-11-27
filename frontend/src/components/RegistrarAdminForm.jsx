@@ -39,7 +39,7 @@ export default function RegistrarAdminForm({ onNotify }) {
     try {
       setLoading(true);
 
-      const res = await fetch("https://icomp-backend.onrender.com/", {
+      const res = await fetch("https://icomp-backend.onrender.com/api/admin/register-admin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
