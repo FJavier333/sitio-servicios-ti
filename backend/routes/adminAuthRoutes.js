@@ -54,6 +54,7 @@ router.post("/register", async (req, res) => {
 
 // 👉 LOGIN DE ADMIN
 router.post("/login", async (req, res) => {
+  console.log(">>> [LOGIN] Llamada recibida con body:", req.body);
   const { username, password } = req.body;
 
   if (!username || !password) {
